@@ -114,7 +114,7 @@ jobs:
             Py-${{ steps.python-install.outputs.python-version }}
 
   docs:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     env:
       TOXENV: docs
     steps:
@@ -136,7 +136,7 @@ jobs:
     - docs
     - test_cygwin
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Decide whether the needed jobs succeeded or failed
@@ -207,7 +207,7 @@ jobs:
     #    already tested via unit tests (or other tests not classified here as
     #    "integration")
     # With that in mind, the integration tests can run for a single setup
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     timeout-minutes: 75
     steps:
       - uses: actions/checkout@v3
@@ -231,7 +231,7 @@ jobs:
       contents: write
     needs:
     - check
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     timeout-minutes: 75
     steps:
       - uses: actions/checkout@v3
